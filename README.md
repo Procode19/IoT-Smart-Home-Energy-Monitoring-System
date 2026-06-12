@@ -6,16 +6,18 @@ An IoT-based Smart Home Energy Monitoring System developed using ESP32, Wokwi, a
 
 # 📌 Project Overview
 
-The **Smart Home Energy Monitoring System** is an IoT-based solution designed to monitor household electricity consumption in real time. This project uses an **ESP32 microcontroller**, **Wokwi simulation**, and **ThingSpeak cloud platform** to monitor important electrical parameters such as:
+The **Smart Home Energy Monitoring System** is an IoT-based solution designed to monitor household electricity consumption in real time using **ESP32**, **Wokwi Simulation**, and **ThingSpeak Cloud**.
 
-* Voltage
-* Current
-* Power Consumption
-* Energy Usage (kWh)
-* Estimated Electricity Cost
-* Energy Alert Status
+The system continuously monitors:
 
-The system intelligently detects energy consumption levels and provides alerts using **LED indicators** and a **buzzer** for efficient energy management.
+* ⚡ Voltage
+* 🔌 Current
+* 📊 Power Consumption
+* 💡 Energy Usage (kWh)
+* 💰 Estimated Electricity Cost
+* 🚨 Energy Alert Status
+
+The system helps users monitor energy consumption and reduce electricity wastage through cloud monitoring and smart alerts.
 
 ---
 
@@ -25,13 +27,12 @@ The system intelligently detects energy consumption levels and provides alerts u
 ✅ Voltage, Current & Power Calculation
 ✅ Energy Consumption Tracking (kWh)
 ✅ Estimated Electricity Cost Calculation
-✅ Smart Alert System (Normal / Moderate / High Usage)
-✅ LED Status Indicators
-✅ Buzzer Alert for High Consumption
+✅ Smart LED Alert System
+✅ Buzzer Alert for High Energy Usage
 ✅ ThingSpeak Cloud Dashboard Integration
-✅ Live Data Visualization & Graphs
-✅ ESP32-Based IoT Implementation
+✅ Live Graph Monitoring
 ✅ Wokwi Simulation Support
+✅ ESP32 IoT-Based Implementation
 
 ---
 
@@ -50,8 +51,10 @@ The system intelligently detects energy consumption levels and provides alerts u
 # ⚙️ Hardware Components
 
 * ESP32 Development Board
-* LEDs (Green, Yellow, Red)
 * Potentiometer
+* Green LED
+* Yellow LED
+* Red LED
 * Buzzer
 * 220Ω Resistors
 * Jumper Wires
@@ -62,15 +65,15 @@ The system intelligently detects energy consumption levels and provides alerts u
 
 ```text
 Wokwi Simulation
-       ↓
+        ↓
 ESP32 Data Processing
-       ↓
+        ↓
 Energy Calculation
-       ↓
+        ↓
 Alert Generation
-       ↓
+        ↓
 ThingSpeak Cloud
-       ↓
+        ↓
 Real-Time Dashboard Visualization
 ```
 
@@ -80,19 +83,19 @@ Real-Time Dashboard Visualization
 
 ## LED Connections
 
-| Component  | ESP32 Pin |
-| ---------- | --------- |
-| Green LED  | GPIO23    |
-| Yellow LED | GPIO22    |
-| Red LED    | GPIO21    |
+| Component  | GPIO Pin |
+| ---------- | -------- |
+| Green LED  | GPIO23   |
+| Yellow LED | GPIO22   |
+| Red LED    | GPIO21   |
 
-## Buzzer Connection
+### Buzzer Connection
 
-| Component | ESP32 Pin |
-| --------- | --------- |
-| Buzzer    | GPIO19    |
+| Component | GPIO Pin |
+| --------- | -------- |
+| Buzzer    | GPIO19   |
 
-## Potentiometer Connection
+### Potentiometer Connection
 
 | Potentiometer Pin | ESP32 Pin |
 | ----------------- | --------- |
@@ -104,26 +107,23 @@ Real-Time Dashboard Visualization
 
 # ⚡ Working Principle
 
-The potentiometer acts as a simulated current sensor in the Wokwi environment. The ESP32 continuously reads analog values and converts them into current measurements.
+The potentiometer acts as a simulated current sensor in the Wokwi environment. The ESP32 continuously reads analog values and converts them into current readings.
 
-Power is calculated using:
+### Power Formula
 
-P = V × I
-
-The system calculates:
-
-* Current (A)
-* Power (W)
-* Energy Consumption (kWh)
-* Estimated Electricity Cost (₹)
+```text
+Power = Voltage × Current
+```
 
 ### Alert Logic
 
 🟢 **0W – 500W** → Normal Usage
+
 🟡 **500W – 1500W** → Moderate Usage
+
 🔴 **Above 1500W** → High Energy Alert + Buzzer
 
-The ESP32 uploads sensor data to **ThingSpeak every 15 seconds** for live cloud monitoring.
+The ESP32 uploads sensor data to **ThingSpeak every 15 seconds** for real-time monitoring.
 
 ---
 
@@ -138,87 +138,135 @@ The ESP32 uploads sensor data to **ThingSpeak every 15 seconds** for live cloud 
 | Field 5 | Cost         |
 | Field 6 | Alert Status |
 
-```md
+---
+
+# 📂 Project Structure
+
+```text
+IoT-Smart-Home-Energy-Monitoring-System/
+│── arduino_code/
+│     └── smart_home_energy_monitoring.ino
+│
+│── docs/
+│     └── project_report.pdf
+│
+│── images/
+│     ├── wokwi_simulation.png
+│     ├── wokwi_connection_diagram.png
+│     ├── serial_monitor_normal_usage.png
+│     ├── serial_monitor_moderate_usage.png
+│     ├── serial_monitor_high_energy_alert.png
+│     ├── thingspeak_dashboard.png
+│     ├── thingspeak_graphs_voltage_current.png
+│     └── thingspeak_graphs_power_energy_cost.png
+│
+│── outputs/
+│     └── serial_monitor_output.png
+│
+│── README.md
+│── requirements.txt
+│── LICENSE
+│── .gitignore
+```
+
+---
+
 # 📸 Project Screenshots
 
 ## 1. Wokwi Simulation
+
 ![Wokwi Simulation](./images/wokwi_simulation.png)
 
+---
+
 ## 2. Wokwi Circuit Connection
-![Wokwi Connection](./images/wokwi_connection_diagram.png)
+
+![Wokwi Circuit Connection](./images/wokwi_connection_diagram.png)
+
+---
 
 ## 3. Serial Monitor - Normal Usage
+
 ![Normal Usage](./images/serial_monitor_normal_usage.png)
 
+---
+
 ## 4. Serial Monitor - Moderate Usage
+
 ![Moderate Usage](./images/serial_monitor_moderate_usage.png)
 
+---
+
 ## 5. Serial Monitor - High Energy Alert
+
 ![High Energy Alert](./images/serial_monitor_high_energy_alert.png)
 
+---
+
 ## 6. ThingSpeak Dashboard
+
 ![ThingSpeak Dashboard](./images/thingspeak_dashboard.png)
 
+---
+
 ## 7. ThingSpeak Graphs (Voltage & Current)
-![ThingSpeak Graphs](./images/thingspeak_graphs_voltage_current.png)
+
+![ThingSpeak Graphs Voltage Current](./images/thingspeak_graphs_voltage_current.png)
+
+---
 
 ## 8. ThingSpeak Graphs (Power, Energy & Cost)
-![ThingSpeak Graphs](./images/thingspeak_graphs_power_energy_cost.png)
-```
 
+![ThingSpeak Graphs Power Energy Cost](./images/thingspeak_graphs_power_energy_cost.png)
+
+---
 
 # 📈 Results
 
 The system successfully:
 
-* Monitored electricity consumption in real time
-* Calculated voltage, current, and power
-* Tracked energy consumption
-* Estimated electricity cost
-* Generated smart energy alerts
-* Uploaded live data to ThingSpeak
-* Displayed real-time cloud graphs
+✅ Monitored electricity consumption in real time
+✅ Calculated voltage, current, and power
+✅ Tracked energy usage (kWh)
+✅ Estimated electricity cost
+✅ Generated smart energy alerts
+✅ Uploaded live data to ThingSpeak
+✅ Displayed cloud-based graphs and analytics
 
 ---
 
 # 🎯 Applications
 
-* Smart Homes
+* Smart Home Automation
 * Energy Monitoring Systems
 * Smart Buildings
-* Industrial Energy Tracking
 * Electricity Bill Monitoring
+* Industrial Energy Monitoring
 
 ---
 
 # 🔮 Future Scope
 
-* Mobile App Integration
-* Real Sensor Implementation
+* Real Sensor Integration
+* Mobile App Support
 * AI-Based Energy Prediction
 * Smart Appliance Automation
 * Automatic Energy Saving Recommendations
 
 ---
 
-# 👨‍💻 Mentor
+# 👨‍🏫 Mentor
 
 **Umesh Yadav**
 EDC IIT-Delhi
 
 ---
 
-# 👨‍🎓 Developed By
+# 👨‍💻 Developed By
 
 **Om Navgire**
-Electronics & Telecommunication Engineering (EXTC)
-Prof. Ram Meghe Institute of Technology And Research, Amravati
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome! Feel free to fork this repository and improve the project.
+**Department:** Electronics & Telecommunication Engineering (EXTC)
+**College:** Prof. Ram Meghe Institute of Technology And Research, Amravati
 
 ---
 
@@ -230,4 +278,4 @@ This project is developed for educational and learning purposes.
 
 # ⭐ Show Your Support
 
-If you found this project useful, please consider giving it a ⭐ on GitHub!
+If you found this project useful, please give it a **⭐ star on GitHub**.
