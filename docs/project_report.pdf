@@ -1,0 +1,217 @@
+# PROJECT REPORT
+
+## Smart Home Energy Monitoring System using ESP32, Wokwi & ThingSpeak
+
+### Submitted By
+
+**Om Navgire**
+
+### Department
+
+**Electronics and Telecommunication Engineering (EXTC)**
+
+### College Name
+
+**Prof. Ram Meghe Institute of Technology And Research, Amravati**
+
+### Mentor
+
+**Umesh Yadav**
+
+### Project Duration
+
+**1 Week**
+
+---
+
+# ABSTRACT
+
+The Smart Home Energy Monitoring System is an Internet of Things (IoT)-based solution developed to monitor household electricity consumption in real time. The project uses an ESP32 microcontroller, Wokwi simulation platform, and ThingSpeak cloud platform to track electrical parameters such as voltage, current, power consumption, energy usage, and estimated electricity cost.
+
+The system helps users identify excessive power consumption and encourages energy-efficient practices. A potentiometer is used in simulation to mimic real-time current variations. Based on energy usage, LED indicators and a buzzer provide visual and audio alerts for low, moderate, and high energy consumption levels. Real-time sensor data is uploaded to ThingSpeak for remote monitoring and analysis through graphical dashboards.
+
+This project demonstrates how IoT can improve smart home automation and energy management while reducing electricity wastage.
+
+---
+
+# INTRODUCTION
+
+Energy management has become one of the most important concerns in modern households due to increasing electricity costs and excessive energy consumption. Traditional electricity meters only provide monthly readings, making it difficult for users to monitor power usage in real time.
+
+The Smart Home Energy Monitoring System aims to solve this problem by continuously tracking electricity consumption and displaying live energy data on a cloud dashboard. By using IoT technology, the system enables users to remotely monitor their electricity usage and receive alerts during high energy consumption.
+
+This system combines simulation, cloud computing, and embedded systems to create a cost-effective and scalable smart energy monitoring solution.
+
+---
+
+# PROBLEM STATEMENT
+
+Many households face difficulties in monitoring real-time energy consumption, leading to excessive electricity usage and increased energy bills. Traditional monitoring systems do not provide instant feedback or cloud-based analytics.
+
+Therefore, an intelligent IoT-based energy monitoring system is required to monitor energy usage, provide alerts, and display live data remotely.
+
+---
+
+# OBJECTIVES
+
+The main objectives of this project are:
+
+1. To monitor household energy consumption in real time.
+2. To calculate voltage, current, power, and energy usage.
+3. To estimate electricity cost automatically.
+4. To provide alerts during excessive power usage.
+5. To upload real-time data to ThingSpeak cloud.
+6. To visualize electricity consumption through graphs and dashboards.
+
+---
+
+# COMPONENTS USED
+
+## Hardware Components
+
+1. ESP32 Development Board
+2. LEDs (Green, Yellow, Red)
+3. Buzzer
+4. Potentiometer (for current simulation)
+5. Jumper Wires
+6. Resistors (220Ω)
+
+## Software Components
+
+1. Wokwi Simulation Platform
+2. ThingSpeak Cloud Dashboard
+3. Arduino IDE / VS Code
+4. GitHub
+
+---
+
+# TECHNOLOGIES USED
+
+### ESP32
+
+ESP32 is a powerful microcontroller with built-in Wi-Fi and Bluetooth capabilities used for IoT applications.
+
+### Wokwi
+
+Wokwi is an online electronics simulation platform used to simulate the ESP32 circuit without physical hardware.
+
+### ThingSpeak
+
+ThingSpeak is an IoT cloud analytics platform used to collect, store, visualize, and analyze real-time sensor data.
+
+### VS Code
+
+Visual Studio Code is used to organize project files and manage source code.
+
+---
+
+# SYSTEM WORKFLOW
+
+The system follows the workflow below:
+
+Wokwi Simulation → ESP32 Data Processing → Energy Calculation → Alert Generation → ThingSpeak Cloud → Data Visualization
+
+---
+
+# CIRCUIT CONNECTIONS
+
+The following connections are used in the project:
+
+### LED Connections
+
+* GPIO23 → Green LED
+* GPIO22 → Yellow LED
+* GPIO21 → Red LED
+
+### Buzzer Connection
+
+* GPIO19 → Buzzer
+
+### Potentiometer Connection
+
+* VCC → 3.3V
+* GND → GND
+* Signal → GPIO35
+
+---
+
+# WORKING PRINCIPLE
+
+The potentiometer acts as a simulated current sensor in the Wokwi environment. The ESP32 continuously reads analog values from the potentiometer and converts them into current values.
+
+Power is calculated using the formula:
+
+Power = Voltage × Current
+
+Energy consumption is calculated in kilowatt-hours (kWh), and the estimated electricity cost is generated automatically.
+
+Based on the power usage level:
+
+* Low usage → Green LED ON
+* Moderate usage → Yellow LED ON
+* High usage → Red LED + Buzzer ON
+
+The ESP32 uploads all real-time data to ThingSpeak every 15 seconds.
+
+---
+
+# RESULTS AND OBSERVATIONS
+
+The system successfully monitored and displayed:
+
+* Voltage
+* Current
+* Power Consumption
+* Energy Usage
+* Estimated Electricity Cost
+* Energy Alert Status
+
+The ThingSpeak dashboard successfully displayed real-time graphs of sensor data.
+
+---
+
+# ADVANTAGES
+
+1. Real-time energy monitoring
+2. Cloud-based dashboard access
+3. Smart alert system
+4. Cost estimation feature
+5. Low-cost implementation
+6. Scalable for smart homes
+
+---
+
+# APPLICATIONS
+
+1. Smart Home Automation
+2. Energy Management Systems
+3. Electricity Bill Monitoring
+4. Industrial Energy Monitoring
+5. Smart Buildings
+
+---
+
+# FUTURE SCOPE
+
+Future improvements can include:
+
+1. Integration of real current sensors
+2. Mobile application support
+3. AI-based energy prediction
+4. Automatic appliance control
+5. Smart billing notifications
+
+---
+
+# CONCLUSION
+
+The Smart Home Energy Monitoring System successfully demonstrates the use of IoT technology for monitoring electricity consumption. The system provides real-time energy tracking, cloud visualization, and alert mechanisms to improve energy efficiency. This project can be further expanded for smart homes and industrial applications.
+
+---
+
+# REFERENCES
+
+1. ESP32 Official Documentation
+2. Wokwi Simulation Platform
+3. ThingSpeak Official Documentation
+4. Arduino Official Documentation
