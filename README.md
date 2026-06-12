@@ -138,90 +138,34 @@ The ESP32 uploads sensor data to **ThingSpeak every 15 seconds** for live cloud 
 | Field 5 | Cost         |
 | Field 6 | Alert Status |
 
----
-
-# 📂 Project Structure
-
-```text
-IoT-Smart-Home-Energy-Monitoring-System/
-│── arduino_code/
-│     └── smart_home_energy_monitoring.ino
-│
-│── images/
-│     ├── wokwi_simulation.png
-│     ├── wokwi_connection_diagram.png
-│     ├── serial_monitor_normal_usage.png
-│     ├── serial_monitor_moderate_usage.png
-│     ├── serial_monitor_high_energy_alert.png
-│     ├── thingspeak_dashboard.png
-│     ├── thingspeak_graphs_voltage_current.png
-│     └── thingspeak_graphs_power_energy_cost.png
-│
-│── docs/
-│     └── project_report.pdf
-│
-│── outputs/
-│     └── serial_monitor_output.png
-│
-│── README.md
-│── requirements.txt
-│── LICENSE
-│── .gitignore
-```
-
----
-
+```md
 # 📸 Project Screenshots
 
 ## 1. Wokwi Simulation
-
-```md
-![Wokwi Simulation](images/wokwi_simulation.png)
-```
+![Wokwi Simulation](./images/wokwi_simulation.png)
 
 ## 2. Wokwi Circuit Connection
-
-```md
-![Wokwi Connection](images/wokwi_connection_diagram.png)
-```
+![Wokwi Connection](./images/wokwi_connection_diagram.png)
 
 ## 3. Serial Monitor - Normal Usage
-
-```md
-![Normal Usage](images/serial_monitor_normal_usage.png)
-```
+![Normal Usage](./images/serial_monitor_normal_usage.png)
 
 ## 4. Serial Monitor - Moderate Usage
-
-```md
-![Moderate Usage](images/serial_monitor_moderate_usage.png)
-```
+![Moderate Usage](./images/serial_monitor_moderate_usage.png)
 
 ## 5. Serial Monitor - High Energy Alert
-
-```md
-![High Energy Alert](images/serial_monitor_high_energy_alert.png)
-```
+![High Energy Alert](./images/serial_monitor_high_energy_alert.png)
 
 ## 6. ThingSpeak Dashboard
-
-```md
-![ThingSpeak Dashboard](images/thingspeak_dashboard.png)
-```
+![ThingSpeak Dashboard](./images/thingspeak_dashboard.png)
 
 ## 7. ThingSpeak Graphs (Voltage & Current)
-
-```md
-![ThingSpeak Graphs](images/thingspeak_graphs_voltage_current.png)
-```
+![ThingSpeak Graphs](./images/thingspeak_graphs_voltage_current.png)
 
 ## 8. ThingSpeak Graphs (Power, Energy & Cost)
-
-```md
-![ThingSpeak Graphs](images/thingspeak_graphs_power_energy_cost.png)
+![ThingSpeak Graphs](./images/thingspeak_graphs_power_energy_cost.png)
 ```
 
----
 
 # 📈 Results
 
